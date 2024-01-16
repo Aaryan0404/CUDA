@@ -1,3 +1,11 @@
+I've been working to optimize CUDA work done by the author of this GitHub Repo: https://github.com/Bruce-Lee-LY/cuda_hgemm
+
+Writing and profiling and HGEMM is associated with a lot of "infrastructure" - everything from collecting/printing specs about the GPU we're running on to creating functions to initialize matrices + check the correctness of HGEMMs. The author of the GitHub repo linked above has done an amazing job creating robust HGEMM infra, which I've been able to leverage - I've been able to dive straight into writing + profiling my own CUDA kernels (found throughout this folder)
+
+All my work is being tested on an RTX 4090, a GPU my PhD mentor (Benjamin F. Spector, Hazy Research SAIL) has very kindly given me SSH-access to
+
+README from https://github.com/Bruce-Lee-LY/cuda_hgemm:
+
 # CUDA HGEMM
 Several optimization methods of half-precision general matrix multiplication (HGEMM) using tensor core with WMMA API and MMA PTX instruction. The calculation expression is as follows, where the precision of matrix A (M * K), B (K * N) and C (M * N) is FP16. Through exploring various matrix tiling and optimization methods, the current performance between 256 to 16384 dimensions is not less than 95% of the performance of cublas, and in many scenarios, it exceeds the performance of cublas.
 ```
