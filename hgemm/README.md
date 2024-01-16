@@ -1,6 +1,6 @@
 I've been working to optimize CUDA work done by the author of this GitHub Repo: https://github.com/Bruce-Lee-LY/cuda_hgemm
 
-Writing and profiling and HGEMM is associated with a lot of "infrastructure" - everything from collecting/printing specs about the GPU we're running on to creating functions to initialize matrices + check the correctness of HGEMMs. The author of the GitHub repo linked above has done an amazing job creating robust HGEMM infra, which I've been able to leverage - I've been able to dive straight into writing + profiling my own CUDA kernels (found throughout this folder)
+Writing and profiling and HGEMM is associated with a lot of "infrastructure" - everything from collecting/printing low-level specs about the GPU being used on to creating functions to initialize matrices + check the correctness of HGEMMs. The author of the GitHub repo linked above has done an amazing job creating robust HGEMM infra, which I've been able to leverage - I've been able to dive straight into writing + profiling my own CUDA kernels (found throughout this folder)
 
 All my work is being tested on an RTX 4090, a GPU my PhD mentor (Benjamin F. Spector, Hazy Research SAIL) has very kindly given me SSH-access to
 
