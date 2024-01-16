@@ -12,8 +12,6 @@ Several optimization methods of half-precision general matrix multiplication (HG
 C (M * N) = A (M * K) * B (K * N)
 ```
 
-![hgemm](./media/images/hgemm.png)
-
 # Optimization Method
 - Tiling: 256 * 128 for block tiling size and 64 * 64 for warp tiling size
 - Coalescing Access: using wide instruction access to global memory
