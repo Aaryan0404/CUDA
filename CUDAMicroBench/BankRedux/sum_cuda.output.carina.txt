@@ -1,0 +1,97 @@
+Test on Carina
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+xyi2@cci-carina:~/CUDAMemBench/Reduction_bank_conflicts$ sh test.sh
+Usage: sum <n>
+==17834== NVPROF is profiling process 17834, command: ./sum_cuda 102400
+sum(102400): checksum: 0.0820312, time: 56.80ms
+==17834== Profiling application: ./sum_cuda 102400
+==17834== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   76.45%  367.61us        10  36.761us  36.447us  37.216us  [CUDA memcpy HtoD]
+                    7.04%  33.856us        10  3.3850us  3.3280us  3.6480us  sum_cudakernel_bc(float const *, float*)
+                    6.55%  31.487us        10  3.1480us  3.0720us  3.5840us  sum_warmingup(float const *, float*)
+                    6.28%  30.176us        10  3.0170us  2.9760us  3.3280us  sum_cudakernel(float const *, float*)
+                    3.68%  17.696us        10  1.7690us  1.6960us  2.1120us  [CUDA memcpy DtoH]
+      API calls:   97.85%  309.70ms        20  15.485ms  4.7930us  308.16ms  cudaMalloc
+                    0.57%  1.8076ms         1  1.8076ms  1.8076ms  1.8076ms  cuDeviceTotalMem
+                    0.55%  1.7457ms        20  87.287us  5.9480us  202.21us  cudaFree
+                    0.55%  1.7415ms        20  87.076us  20.442us  185.14us  cudaMemcpy
+                    0.18%  577.52us        97  5.9530us     179ns  233.30us  cuDeviceGetAttribute
+                    0.14%  446.96us        30  14.898us  6.6370us  36.104us  cudaDeviceSynchronize
+                    0.13%  419.43us        30  13.981us  9.0450us  44.064us  cudaLaunchKernel
+                    0.02%  63.118us         1  63.118us  63.118us  63.118us  cuDeviceGetName
+                    0.00%  3.8910us         1  3.8910us  3.8910us  3.8910us  cuDeviceGetPCIBusId
+                    0.00%  3.6750us         3  1.2250us     194ns  2.9560us  cuDeviceGetCount
+                    0.00%  1.6640us         2     832ns     200ns  1.4640us  cuDeviceGet
+                    0.00%     329ns         1     329ns     329ns     329ns  cuDeviceGetUuid
+Usage: sum <n>
+==17848== NVPROF is profiling process 17848, command: ./sum_cuda 204800
+sum(204800): checksum: 0.195312, time: 47.30ms
+==17848== Profiling application: ./sum_cuda 204800
+==17848== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   81.18%  694.30us        10  69.429us  69.055us  69.951us  [CUDA memcpy HtoD]
+                    6.14%  52.544us        10  5.2540us  5.1840us  5.5040us  sum_cudakernel_bc(float const *, float*)
+                    5.40%  46.207us        10  4.6200us  4.5120us  5.1200us  sum_warmingup(float const *, float*)
+                    5.18%  44.319us        10  4.4310us  4.3520us  4.6080us  sum_cudakernel(float const *, float*)
+                    2.09%  17.888us        10  1.7880us  1.6960us  2.3680us  [CUDA memcpy DtoH]
+      API calls:   97.13%  238.37ms        20  11.918ms  3.1170us  237.19ms  cudaMalloc
+                    0.88%  2.1663ms        20  108.31us  16.324us  239.37us  cudaMemcpy
+                    0.69%  1.6917ms         1  1.6917ms  1.6917ms  1.6917ms  cuDeviceTotalMem
+                    0.56%  1.3718ms        20  68.588us  4.3260us  150.21us  cudaFree
+                    0.36%  885.44us        30  29.514us  7.4530us  76.146us  cudaDeviceSynchronize
+                    0.24%  581.21us        97  5.9910us     176ns  233.36us  cuDeviceGetAttribute
+                    0.11%  274.61us        30  9.1530us  5.1940us  32.402us  cudaLaunchKernel
+                    0.02%  53.899us         1  53.899us  53.899us  53.899us  cuDeviceGetName
+                    0.00%  3.4390us         1  3.4390us  3.4390us  3.4390us  cuDeviceGetPCIBusId
+                    0.00%  3.3550us         3  1.1180us     311ns  2.5540us  cuDeviceGetCount
+                    0.00%  1.7880us         2     894ns     193ns  1.5950us  cuDeviceGet
+                    0.00%     343ns         1     343ns     343ns     343ns  cuDeviceGetUuid
+Usage: sum <n>
+==17862== NVPROF is profiling process 17862, command: ./sum_cuda 409600
+sum(409600): checksum: 2, time: 42.40ms
+==17862== Profiling application: ./sum_cuda 409600
+==17862== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   88.43%  1.8646ms        10  186.46us  180.10us  194.88us  [CUDA memcpy HtoD]
+                    4.02%  84.671us        10  8.4670us  8.3510us  8.7040us  sum_cudakernel_bc(float const *, float*)
+                    3.36%  70.784us        10  7.0780us  6.9760us  7.5200us  sum_warmingup(float const *, float*)
+                    3.30%  69.599us        10  6.9590us  6.8160us  7.2310us  sum_cudakernel(float const *, float*)
+                    0.90%  18.912us        10  1.8910us  1.8560us  1.9520us  [CUDA memcpy DtoH]
+      API calls:   96.04%  201.06ms        20  10.053ms  3.1980us  199.88ms  cudaMalloc
+                    1.96%  4.0979ms        20  204.89us  18.481us  425.97us  cudaMemcpy
+                    0.68%  1.4212ms        20  71.059us  4.8670us  151.11us  cudaFree
+                    0.60%  1.2553ms         1  1.2553ms  1.2553ms  1.2553ms  cuDeviceTotalMem
+                    0.33%  694.61us        30  23.153us  10.489us  49.521us  cudaDeviceSynchronize
+                    0.22%  468.27us        97  4.8270us     117ns  190.81us  cuDeviceGetAttribute
+                    0.14%  296.65us        30  9.8880us  5.2010us  35.012us  cudaLaunchKernel
+                    0.02%  41.559us         1  41.559us  41.559us  41.559us  cuDeviceGetName
+                    0.00%  3.4630us         1  3.4630us  3.4630us  3.4630us  cuDeviceGetPCIBusId
+                    0.00%  1.6510us         3     550ns     133ns  1.2210us  cuDeviceGetCount
+                    0.00%  1.6320us         2     816ns     163ns  1.4690us  cuDeviceGet
+                    0.00%     217ns         1     217ns     217ns     217ns  cuDeviceGetUuid
+Usage: sum <n>
+==17875== NVPROF is profiling process 17875, command: ./sum_cuda 1024000
+sum(1024000): checksum: 1.84375, time: 48.30ms
+==17875== Profiling application: ./sum_cuda 1024000
+==17875== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   93.94%  7.7800ms        10  778.00us  754.23us  851.74us  [CUDA memcpy HtoD]
+                    2.20%  182.37us        10  18.236us  18.112us  18.464us  sum_cudakernel_bc(float const *, float*)
+                    1.80%  149.47us        10  14.947us  14.816us  15.232us  sum_warmingup(float const *, float*)
+                    1.78%  147.23us        10  14.723us  14.624us  14.848us  sum_cudakernel(float const *, float*)
+                    0.27%  22.592us        10  2.2590us  2.1440us  2.5920us  [CUDA memcpy DtoH]
+      API calls:   93.66%  242.51ms        20  12.125ms  114.90us  240.14ms  cudaMalloc
+                    3.78%  9.7842ms        20  489.21us  24.072us  1.0485ms  cudaMemcpy
+                    1.02%  2.6339ms        20  131.70us  111.91us  174.07us  cudaFree
+                    0.70%  1.8003ms         1  1.8003ms  1.8003ms  1.8003ms  cuDeviceTotalMem
+                    0.48%  1.2428ms        30  41.427us  18.148us  86.315us  cudaDeviceSynchronize
+                    0.22%  568.17us        97  5.8570us     177ns  231.36us  cuDeviceGetAttribute
+                    0.13%  331.36us        30  11.045us  6.0610us  36.659us  cudaLaunchKernel
+                    0.02%  53.044us         1  53.044us  53.044us  53.044us  cuDeviceGetName
+                    0.00%  3.0390us         1  3.0390us  3.0390us  3.0390us  cuDeviceGetPCIBusId
+                    0.00%  2.0760us         3     692ns     232ns  1.3760us  cuDeviceGetCount
+                    0.00%  1.2310us         2     615ns     274ns     957ns  cuDeviceGet
+                    0.00%     365ns         1     365ns     365ns     365ns  cuDeviceGetUuid
