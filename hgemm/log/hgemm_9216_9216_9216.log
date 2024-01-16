@@ -1,0 +1,84 @@
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:56 main] CUDA HGEMM start with 32 CPU processes on the 0-th GPU: NVIDIA GeForce RTX 4090
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:62 main] CUDA driver version / runtime version: 12.3 / 12.3
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:64 main] CUDA capability major/minor version number: 8.9
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:65 main] 128 multiprocessors, 128 CUDA cores/MP: 16384 CUDA cores
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:68 main] GPU max clock rate: 2595 MHz (2.59 GHz)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:70 main] Memory clock rate: 10501 MHz (10.50 GHz)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:72 main] Memory bus width: 384-bit
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:73 main] Total amount of global memory: 24184 MBytes (25358630912 Bytes)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:75 main] Total amount of constant memory: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:77 main] Total amount of shared memory per block: 48 KBytes (49152 Bytes)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:79 main] Total shared memory per multiprocessor: 100 KBytes (102400 Bytes)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:81 main] L2 cache size: 73728 KBytes (75497472 Bytes)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:83 main] Total number of registers available per block: 65536
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:84 main] Warp size: 32
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:85 main] Max number of threads per multiprocessor: 1536
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:86 main] Max number of threads per block: 1024
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:87 main] Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:89 main] Max dimension size of a grid size (x,y,z): (2147483647, 65535, 65535)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:92 main] A (9216 x 9216) * B (9216 x 9216) = C (9216 x 9216)
+[HGEMM 2024-01-14 21:45:20 1573742:1573742 main.cu:93 main] Profiling: enable wmma: 1, enable mma: 1, warmup iterations: 1, profiling iterations: 10, sleep duration: 100 ms, enable check: 0
+[HGEMM 2024-01-14 21:45:22 1573742:1573742 matrix.h:37 Matrix] Matrix A: 9216 * 9216, cpu: 0x7fc515dff010, gpu: 0x7fc508000000
+[HGEMM 2024-01-14 21:45:24 1573742:1573742 matrix.h:37 Matrix] Matrix B: 9216 * 9216, cpu: 0x7fc4fddff010, gpu: 0x7fc4f0000000
+[HGEMM 2024-01-14 21:45:26 1573742:1573742 matrix.h:37 Matrix] Matrix C: 9216 * 9216, cpu: 0x7fc4e5dff010, gpu: 0x7fc4d8000000
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 matrix.h:37 Matrix] Matrix Base: 9216 * 9216, cpu: 0x7fc4cddff010, gpu: 0x7fc4c0000000
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Cublas-Tensor-Op -----------------
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:82 evaluate] Warm up time: 30.419 ms
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:121 profile] Cublas-Tensor-Op exit, profiling time: 5.983 ms (100.00%), throughput: 261.665 TFLOPS (100.00%)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Padding -----------------
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 wmma_padding.cu:187 initWmmaPadding] smem_max_size: 68 KBytes (69632 Bytes)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:82 evaluate] Warm up time: 10.635 ms
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:121 profile] Wmma-Padding exit, profiling time: 10.277 ms (171.77%), throughput: 152.337 TFLOPS (58.22%)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Async -----------------
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 wmma_async.cu:198 initWmmaAsync] smem_max_size: 68 KBytes (69632 Bytes)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:82 evaluate] Warm up time: 8.786 ms
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:121 profile] Wmma-Async exit, profiling time: 8.704 ms (145.48%), throughput: 179.864 TFLOPS (68.74%)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Async-Pg2s -----------------
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 wmma_async_pg2s.cu:273 initWmmaAsyncPg2s] smem_max_size: 68 KBytes (69632 Bytes)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:82 evaluate] Warm up time: 7.367 ms
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:121 profile] Wmma-Async-Pg2s exit, profiling time: 7.248 ms (121.14%), throughput: 216.004 TFLOPS (82.55%)
+[HGEMM 2024-01-14 21:45:28 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Async-Pg2s-Ps2r -----------------
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 wmma_async_pg2s_ps2r.cu:337 initWmmaAsyncPg2sPs2r] smem_max_size: 68 KBytes (69632 Bytes)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:82 evaluate] Warm up time: 7.420 ms
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:121 profile] Wmma-Async-Pg2s-Ps2r exit, profiling time: 7.405 ms (123.77%), throughput: 211.417 TFLOPS (80.80%)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Async-Stage2 -----------------
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 wmma_async_stage2.cu:366 initWmmaAsyncStage2] smem_max_size: 68 KBytes (69632 Bytes)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:82 evaluate] Warm up time: 7.288 ms
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:121 profile] Wmma-Async-Stage2 exit, profiling time: 7.296 ms (121.95%), throughput: 214.576 TFLOPS (82.00%)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Wmma-Async-Stage3 -----------------
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 wmma_async_stage3.cu:444 initWmmaAsyncStage3] smem_max_size: 90 KBytes (92160 Bytes)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:82 evaluate] Warm up time: 7.355 ms
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:121 profile] Wmma-Async-Stage3 exit, profiling time: 7.347 ms (122.80%), throughput: 213.089 TFLOPS (81.44%)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Permuted -----------------
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 mma_permuted.cu:215 initMmaPermuted] smem_max_size: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:82 evaluate] Warm up time: 10.246 ms
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:121 profile] Mma-Permuted exit, profiling time: 10.030 ms (167.64%), throughput: 156.090 TFLOPS (59.65%)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async -----------------
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 mma_async.cu:224 initMmaAsync] smem_max_size: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:82 evaluate] Warm up time: 8.863 ms
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:121 profile] Mma-Async exit, profiling time: 8.831 ms (147.60%), throughput: 177.280 TFLOPS (67.75%)
+[HGEMM 2024-01-14 21:45:29 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async-Pg2s -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_async_pg2s.cu:314 initMmaAsyncPg2s] smem_max_size: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 6.748 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-Async-Pg2s exit, profiling time: 6.734 ms (112.55%), throughput: 232.490 TFLOPS (88.85%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async-Pg2s-Ps2r -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_async_pg2s_ps2r.cu:403 initMmaAsyncPg2sPs2r] smem_max_size: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 6.853 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-Async-Pg2s-Ps2r exit, profiling time: 6.701 ms (112.00%), throughput: 233.621 TFLOPS (89.28%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async-Stage2 -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_async_stage2.cu:438 initMmaAsyncStage2] smem_max_size: 64 KBytes (65536 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 8.059 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-Async-Stage2 exit, profiling time: 7.493 ms (125.24%), throughput: 208.937 TFLOPS (79.85%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async-Stage3 -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_async_stage3.cu:533 initMmaAsyncStage3] smem_max_size: 72 KBytes (73728 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 6.546 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-Async-Stage3 exit, profiling time: 6.450 ms (107.81%), throughput: 242.701 TFLOPS (92.75%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-Async-Stage4 -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_async_stage4.cu:628 initMmaAsyncStage4] smem_max_size: 96 KBytes (98304 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 6.509 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-Async-Stage4 exit, profiling time: 6.368 ms (106.44%), throughput: 245.827 TFLOPS (93.95%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:72 evaluate] ----------------- Evaluating Mma-myKernel -----------------
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 mma_mykernel.cu:550 initmyKernel] smem_max_size: 96 KBytes (98304 Bytes)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:82 evaluate] Warm up time: 6.350 ms
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 tester.h:121 profile] Mma-myKernel exit, profiling time: 6.399 ms (106.96%), throughput: 244.642 TFLOPS (93.49%)
+[HGEMM 2024-01-14 21:45:30 1573742:1573742 main.cu:130 main] Done
