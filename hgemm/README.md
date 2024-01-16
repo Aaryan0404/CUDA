@@ -12,6 +12,9 @@ Several optimization methods of half-precision general matrix multiplication (HG
 C (M * N) = A (M * K) * B (K * N)
 ```
 ![hgemm](./log/performance.png)
+![hgemm](./log/throughput.png)
+
+# In the images above, you see that a couple of the kernels I've written/optimized actually outperform CuBLAS (for specific M,N,K)
 
 # Optimization Method
 - Tiling: 256 * 128 for block tiling size and 64 * 64 for warp tiling size
@@ -49,7 +52,7 @@ cd cuda_hgemm
 ./build.sh -a 80 -t Debug -b OFF
 ```
 
-### RTX3080Ti / RTX3090 / RTX A6000
+### RTX3080Ti / RTX3090 / RTX A6000 / RTX 4090
 ```
 cd cuda_hgemm
 ./build.sh -a 86 -t Release -b OFF
@@ -68,21 +71,3 @@ Process the data in the log and plot it as a line chart.
 cd tools/performance
 ./performance.sh
 ```
-
-## RTX3090
-- CUDA Version: 11.3
-
-The best performance that can be achieved.
-
-![best_throughput](./performance/RTX3090/best_throughput.png)
-
-Performance achieved by current optimization methods.
-
-![throughput](./performance/RTX3090/throughput.png)
-
-## RTX A6000
-- CUDA Version: 11.3
-
-The best performance that can be achieved.
-
-![best_throughput](./performance/RTXA6000/best_throughput.png)
